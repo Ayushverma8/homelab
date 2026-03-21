@@ -1,0 +1,119 @@
+# -----------------------------------------------------------------------------
+# OS / editor noise
+# -----------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# -----------------------------------------------------------------------------
+# Logs
+# -----------------------------------------------------------------------------
+*.log
+logs/
+
+# -----------------------------------------------------------------------------
+# Environment / local overrides
+# -----------------------------------------------------------------------------
+.env
+.env.*
+*.local
+
+# -----------------------------------------------------------------------------
+# OpenTofu / Terraform
+# Keep source, ignore generated state, plans, caches, and secret tfvars.
+# -----------------------------------------------------------------------------
+.terraform/
+.tofu/
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfplan.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Sensitive variable files
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+!*.tfvars.example
+
+# CLI config credentials
+.terraformrc
+terraform.rc
+
+# -----------------------------------------------------------------------------
+# Ansible
+# Keep playbooks/inventory templates, ignore vaults, retries, temp output.
+# -----------------------------------------------------------------------------
+*.retry
+ansible.log
+
+# Common secret files
+vault.yml
+vault.yaml
+vault.json
+group_vars/*/vault.yml
+group_vars/*/vault.yaml
+host_vars/*/vault.yml
+host_vars/*/vault.yaml
+
+# Generated or local-only inventory variants
+inventory.ini
+inventory.yaml
+inventory.yml
+hosts.ini
+
+# Keep examples/templates
+!inventory.example.ini
+!inventory.example.yaml
+!inventory.example.yml
+!hosts.example
+
+# Collections / local virtualenvs
+collections/
+.venv/
+venv/
+
+# -----------------------------------------------------------------------------
+# Python cache
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+
+# -----------------------------------------------------------------------------
+# Archives / backups
+# -----------------------------------------------------------------------------
+*.bak
+*.tmp
+*.orig
+*.zip
+*.tar
+*.tgz
+
+# -----------------------------------------------------------------------------
+# Ubuntu / cloud-init / Proxmox local artifacts
+# -----------------------------------------------------------------------------
+*.img
+*.qcow2
+*.iso
+*.raw
+*.seed
+user-data
+meta-data
+network-config
+
+# Local SSH material
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
