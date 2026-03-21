@@ -1,5 +1,5 @@
 # Proxmox LXC Homelab
-
+![Proxmox Dashboard](docs/image.png)
 OpenTofu-managed LXC containers on Proxmox with automatic Tarantino-themed naming.
 
 Every container gets a random character name from the Quentin Tarantino universe plus a unique hex suffix. Define what you need, the code gives it an identity.
