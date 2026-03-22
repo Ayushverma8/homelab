@@ -28,7 +28,7 @@ jobs:
       - name: Validate
         run: tofu validate
 
-ansible:
+  ansible:
     name: Ansible Lint
     runs-on: ubuntu-latest
     steps:
