@@ -28,7 +28,7 @@ jobs:
       - name: Validate
         run: tofu validate
 
-  ansible:
+ansible:
     name: Ansible Lint
     runs-on: ubuntu-latest
     steps:
@@ -37,6 +37,9 @@ jobs:
 
       - name: Install ansible-lint
         run: pip install ansible-lint
+
+      - name: Install required collections
+        run: ansible-galaxy collection install community.general
 
       - name: Run ansible-lint
         run: ansible-lint ansible/
