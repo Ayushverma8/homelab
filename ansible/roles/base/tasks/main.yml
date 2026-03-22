@@ -1,6 +1,6 @@
 - name: Set timezone
   community.general.timezone:
-    name: "{{ timezone }}"
+    name: "{{ base_timezone }}"
 
 - name: Update apt cache
   ansible.builtin.apt:
@@ -13,7 +13,7 @@
 
 - name: Install common packages
   ansible.builtin.apt:
-    name: "{{ common_packages }}"
+    name: "{{ base_common_packages }}"
     state: present
 
 - name: Clean apt cache
