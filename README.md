@@ -1,6 +1,7 @@
 # homelab
 
-![Proxmox Dashboard](docs/image.png)
+![homelab:tarantino](docs/blog-cover.png)
+
 
 I got tired of clicking through the Proxmox UI every time I needed a container. So I built this.
 
