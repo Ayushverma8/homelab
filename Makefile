@@ -1,4 +1,4 @@
-.PHONY: init plan apply destroy fmt validate output
+.PHONY: init plan apply destroy fmt validate output inventory provision provision-check up down
 
 init:
 	tofu init -upgrade
@@ -22,6 +22,20 @@ validate:
 output:
 	tofu output -json
 
-ssh:
-	@echo "Available containers:"
-	@tofu output -json | jq -r '.containers.value | to_entries[] | "\(.key): \(.value.hostname)"'
+inventory:
+	@bash ansible/generate-inventory.sh > ansible/inventory.yml
+	@echo "Inventory written to ansible/inventory.yml"
+	@cat ansible/inventory.yml
+
+provision: inventory
+	cd ansible && ansible-playbook playbook.yml
+
+provision-check: inventory
+	cd ansible && ansible-playbook playbook.yml --check --diff
+
+up: apply provision
+	@echo "Infrastructure up and provisioned"
+
+down: destroy
+	@rm -f ansible/inventory.yml
+	@echo "Infrastructure destroyed"

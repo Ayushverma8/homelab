@@ -1,0 +1,13 @@
+base_timezone: America/Toronto
+
+base_common_packages:
+  - curl
+  - wget
+  - htop
+  - jq
+  - vim
+  - git
+  - unzip
+  - ca-certificates
+  - gnupg
+  - lsb-release

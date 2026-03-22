@@ -1,0 +1,7 @@
+- name: Provision homelab containers
+  hosts: all
+  become: true
+  gather_facts: true
+
+  roles:
+    - base

@@ -7,10 +7,9 @@ on:
     branches: [main]
 
 jobs:
-  validate:
-    name: Format & Validate
+  tofu:
+    name: OpenTofu Format & Validate
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,3 +27,16 @@ jobs:
 
       - name: Validate
         run: tofu validate
+
+  ansible:
+    name: Ansible Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install ansible-lint
+        run: pip install ansible-lint
+
+      - name: Run ansible-lint
+        run: ansible-lint ansible/
